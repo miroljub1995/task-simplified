@@ -11,7 +11,7 @@ Usage example:
     <meta charset="UTF-8">
 </head>
 <body>
-    <script src="../dist/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/miroljub1995/task-simplified@0.0.1/dist/main.min.js"></script>
     <script>
         (async () => {
             console.log("Running task examples...");
