@@ -4,7 +4,8 @@
   "description": "This is simple Task based wrapper to web worker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode=production",
+    "build-dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/miroljub1995/task-simplified/issues"
   },
-  "homepage": "https://github.com/miroljub1995/task-simplified#readme"
+  "homepage": "https://github.com/miroljub1995/task-simplified#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
 }
