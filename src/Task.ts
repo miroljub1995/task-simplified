@@ -1,7 +1,7 @@
 class Task {
     static Run<Tp, Tr>(f: (p: Tp) => Tr, param: Tp) : Promise<Tr> {
         return new Promise((resolve, reject) => {
-            const workerCode = `var f=${f.toString()};onmessage=function(e){postMessage(f(e.data));};`;
+            const workerCode = `onmessage=function(e){postMessage((${f.toString()})(e.data));};`;
 
             const codeBytes = new Blob([workerCode], { type: "text/plain" });
             const url = URL.createObjectURL(codeBytes);
