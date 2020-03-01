@@ -5,8 +5,7 @@
 </head>
 
 <body>
-    <script src="../dist/main.min.js"></script>
-
+    <script src="../../dist/index.min.js"></script>
     <script>
         (async () => {
             console.log("Running task examples...");
@@ -18,7 +17,7 @@
             //************second
             try {
                 let val2 = await Task.Run(p => { throw new Error("Simulate error in task"); });
-            } catch(e) {
+            } catch (e) {
                 e.preventDefault();
                 console.error(e.message);
             }

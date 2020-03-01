@@ -1,16 +1,27 @@
 const path = require('path');
 
 const defaultConfig = {
-    entry: './src/entry.js',
+    entry: './src/index.ts',
     output: {
-        filename: 'main.js',
+        libraryTarget: 'umd',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
+                // use: 'ts-loader',
+                use: [
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            compilerOptions: {
+                                declaration: false,
+                            },
+                        },
+                    },
+                ],
                 exclude: /node_modules/,
             },
         ],
@@ -22,8 +33,8 @@ const defaultConfig = {
 
 module.exports = (env, argv) => {
     const result = { ...defaultConfig, mode: argv.mode };
-    if(argv.mode == 'production') {
-        result.output.filename = 'main.min.js'
+    if (argv.mode == 'production') {
+        result.output.filename = 'index.min.js'
     }
 
     return result;

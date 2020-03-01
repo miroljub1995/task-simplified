@@ -1,12 +1,19 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "outDir": "lib/",
+        "declaration": true,
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "commonjs",
         "target": "es5",
         "lib": [
             "es6",
             "webworker"
         ],
-      },
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
 }
