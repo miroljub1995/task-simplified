@@ -1,4 +1,4 @@
-class Task {
+class BrowserTask {
     static Run<Tp, Tr>(f: (p: Tp) => Tr, param: Tp) : Promise<Tr> {
         return new Promise((resolve, reject) => {
             const workerCode = `onmessage=function(e){postMessage((${f.toString()})(e.data));};`;
@@ -15,4 +15,4 @@ class Task {
     }
 }
 
-export default Task;
+export default BrowserTask;

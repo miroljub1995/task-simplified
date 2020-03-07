@@ -27,8 +27,5 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
-  "dependencies": {},
-  "browser": {
-    "worker_threads": false
-  }
+  "dependencies": {}
 }

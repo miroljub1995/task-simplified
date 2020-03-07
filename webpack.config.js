@@ -6,6 +6,7 @@ const defaultConfig = {
         libraryTarget: 'umd',
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
+        globalObject: 'this',
     },
     module: {
         rules: [
@@ -29,6 +30,10 @@ const defaultConfig = {
     resolve: {
         extensions: ['.ts'],
     },
+    node: {
+        __filename: false,
+        __dirname: false,
+    }
 };
 
 module.exports = (env, argv) => {
