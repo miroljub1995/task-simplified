@@ -1,8 +1,7 @@
 import BrowserTask from './BrowserTask'
 
 let Task = BrowserTask;
-declare global { const window: any };
-if (typeof window === 'undefined') {
+if (eval('typeof window') === 'undefined') {
     Task = require('./NodeTask').default;
 }
 

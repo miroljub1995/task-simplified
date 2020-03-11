@@ -1,46 +1,52 @@
 const path = require('path');
 
-const defaultConfig = {
-    entry: './src/index.ts',
-    output: {
-        libraryTarget: 'umd',
-        filename: 'index.js',
-        path: path.resolve(__dirname, 'dist'),
-        globalObject: 'this',
-    },
-    module: {
-        rules: [
+module.exports = (env, argv) => {
+    outDir = path.resolve(__dirname, 'dist')
+    if (argv.mode == 'development') {
+        outDir = path.resolve(__dirname, 'debug')
+    }
+
+    tsRule = {
+        test: /\.ts$/,
+        use: [
             {
-                test: /\.ts$/,
-                // use: 'ts-loader',
-                use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            compilerOptions: {
-                                declaration: false,
-                            },
-                        },
+                loader: 'ts-loader',
+                options: {
+                    compilerOptions: {
+                        declaration: true,
+                        outDir: outDir
                     },
-                ],
-                exclude: /node_modules/,
+                },
             },
         ],
-    },
-    resolve: {
-        extensions: ['.ts'],
-    },
-    node: {
-        __filename: false,
-        __dirname: false,
-    }
-};
-
-module.exports = (env, argv) => {
-    const result = { ...defaultConfig, mode: argv.mode };
-    if (argv.mode == 'production') {
-        result.output.filename = 'index.min.js'
+        exclude: /node_modules/,
     }
 
-    return result;
+
+
+    return {
+        entry: {
+            'index': './src/index.ts',
+            'node_worker': './src/node_worker.ts'
+        },
+        output: {
+            libraryTarget: 'umd',
+            filename: '[name].js',
+            path: outDir,
+            globalObject: 'this',
+        },
+        mode: argv.mode,
+        module: {
+            rules: [
+                tsRule,
+            ],
+        },
+        resolve: {
+            extensions: ['.ts'],
+        },
+        node: {
+            __filename: false,
+            __dirname: false,
+        }
+    };
 }
