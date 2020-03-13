@@ -5,7 +5,7 @@ export default class NodeTask {
         return new Promise((resolve, rejects) => {
             const { join } = node_require('path') as typeof import('path');
             const { Worker } = node_require('worker_threads') as typeof import('worker_threads');
-            const worker = new Worker(join(__dirname, './node_worker.js'), {
+            let worker = new Worker(join(__dirname, './node_worker.js'), {
                 workerData: { f: f.toString() }
             });
             worker.on('message', resolve);
