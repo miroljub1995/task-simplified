@@ -1,4 +1,4 @@
-const { Task } = require('../../dist/index.js')
+const { Task } = require('../../dist')
 console.log(Task);
 
 (async () => {
