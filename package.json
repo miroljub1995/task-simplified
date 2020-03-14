@@ -9,8 +9,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "build-dev": "webpack --mode=development",
-    "test-browser": "mocha -r ts-node/register tests/browser.ts",
-    "test-node": "mocha -r ts-node/register tests/node.ts"
+    "test": "mocha -r ts-node/register tests/*.test.ts"
   },
   "repository": {
     "type": "git",
