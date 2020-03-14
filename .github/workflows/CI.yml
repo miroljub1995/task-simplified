@@ -28,5 +28,7 @@ jobs:
       name: Install dependencies
     - run: npm build
       name: Build production
-    - run: npm test
-      name: Run tests
+    - run: npm test-browser
+      name: Run browser tests
+    - run: npm test-node
+      name: Run node tests
