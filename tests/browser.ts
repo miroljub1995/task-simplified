@@ -1,5 +1,6 @@
 import { Task } from '../dist'
 import { expect } from 'chai';
+import 'mocha'
 const jsdom = require('mocha-jsdom');
 
 describe("Test", () => {
