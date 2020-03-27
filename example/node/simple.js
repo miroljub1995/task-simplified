@@ -1,5 +1,4 @@
-const { Task } = require('../../dist')
-console.log(Task);
+const { Task } = require('../../dist');
 
 (async () => {
     const res = await Task.Run((p) => {
@@ -9,5 +8,4 @@ console.log(Task);
     }, 25);
 
     console.log("Result: ", res);
-    process.exit();
 })();

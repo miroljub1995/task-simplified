@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script src="https:/unpkg.com/task-simplified/dist/index.js"></script>
+    <script>
+        (async () => {
+            console.log("Running task examples...");
+            let val1 = await Task.Run(p => p * p, 15);
+            console.log("Val: ", val1);
+        })();
+    </script>
+</body>
+
+</html>
