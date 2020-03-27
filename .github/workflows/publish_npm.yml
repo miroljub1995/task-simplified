@@ -8,10 +8,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
     env:
       NODE_VERSION: '12.x'
 
