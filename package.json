@@ -35,5 +35,5 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {},
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": { "registry": "https://registry.npmjs.org/" }
 }
