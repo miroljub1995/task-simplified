@@ -1,6 +1,7 @@
 # task-simplified
 
 ![CI Pipeline](https://github.com/miroljub1995/task-simplified/workflows/CI/badge.svg?branch=master)
+[![npm version](https://badge.fury.io/js/task-simplified.svg)](https://badge.fury.io/js/task-simplified)
 
 This is simple Task based wrapper to web worker.
 Usage example:
