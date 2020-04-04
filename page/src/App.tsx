@@ -83,14 +83,12 @@ const Item = ({ val, onProcess }: IItemProps) => {
   const renderUnprocessed = () => (<button type="button" className="btn btn-primary" onClick={onProcess}>Process</button>);
   return (
     <div className='item'>
-      {/* <div> */}
       <label>{val.name}</label>
       {{
         'processed': renderProcessed,
         'processing': renderProcessing,
         "unprocessed": renderUnprocessed
       }[val.status]()}
-      {/* </div> */}
     </div>
   );
 }
