@@ -1,0 +1,26 @@
+.description {
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+}
+
+.item > button {
+    width: 150px;
+}
+
+.item > label {
+    margin-right: 20px;
+}
+
+.item > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
