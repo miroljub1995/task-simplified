@@ -17,8 +17,8 @@ interface IAppState {
 class App extends Component<IAppProps, IAppState> {
   state: IAppState = {
     items: [
-      { name: "Item 1", status: "processed" },
-      { name: "Item 2", status: "processing" },
+      { name: "Item 1", status: "unprocessed" },
+      { name: "Item 2", status: "unprocessed" },
       { name: "Item 3", status: "unprocessed" },
       { name: "Item 4", status: "unprocessed" },
       { name: "Item 5", status: "unprocessed" },
@@ -58,7 +58,10 @@ class App extends Component<IAppProps, IAppState> {
   render() {
     return (
       <div>
-        <p className='description'>This is simple wrapper to web worker. You can try by clicking on Process button</p>
+        <div className='description'>
+          <p>This is simple wrapper to web worker. You can try it by clicking <span style={({ fontWeight: 'bold' })}>Process</span> button.{"\n"}</p>
+          <p>View source of <a href="https://github.com/miroljub1995/task-simplified/blob/master/page/src/App.tsx">example.</a></p>
+        </div>
         <div className='items'>
           {this.state.items.map(item => (
             <Item key={item.name} val={item} onProcess={() => this.hangleProcess(item)} />))}

@@ -1,6 +1,6 @@
 {
   "name": "task-simplified",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This is simple Task based wrapper to web worker",
   "main": "dist/index.js",
   "files": [
